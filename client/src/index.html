@@ -11,22 +11,18 @@
   <div class="overlay">
     <div id="greeting">
       <h1 id="welcome"></h1>
-      <button class="start-btn" onclick="overlayOff()">Start</button>
+      <button id="go" class="start-btn" onclick="overlayOff()">Start</button>
     </div>
   </div>
 
   <div id="game-commands" class="game-layout">
-    <div id="top-arch">
-      <div>
-        <p><b></b>Simon<br>says..</b></p>
-      </div>
-    </div>
   </div>
   
   <div class="overlay"></div>
   <script>
     document.querySelector(".overlay").addEventListener("load",overlayOn());
-    document.getElementById("greeting").addEventListener("load", onFetch());
+    document.getElementById("greeting").addEventListener("load", gameServerLoading());
+    document.getElementById("go").addEventListener("click", timerCountdown());
   </script>
 </body>
 </html>
